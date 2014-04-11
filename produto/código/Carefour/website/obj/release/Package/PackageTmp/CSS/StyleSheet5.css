@@ -1,0 +1,93 @@
+﻿#container {
+    min-height: 100%;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+}
+
+fieldset{
+    background: #f6f6f6;
+}
+
+fieldset legend{
+    text-align:left;
+}
+
+#formularioCliente{    
+    height: auto;
+    width: 800px;
+    margin-top: 5px;
+    float: left;
+}
+
+#CondicoesCompra {    
+    text-align: center;    
+    height: 150px;
+    width: 401px;
+    margin-top: 5px;   
+    float: left ;
+}
+
+#Instrucoes {    
+    text-align: center;    
+    height: 150px;
+    width: 401px;
+    margin-top: 5px;   
+    float: left ;   
+}
+
+#subtotal {    
+    text-align: center;    
+    height: 150px;
+    width:401px;
+    margin-top: 5px;
+    float: left ;
+}
+
+#cabecalho {
+    font-size: 80px;
+    text-align: center;
+    height: 100px;
+    width: 90%;
+    margin-left: 5%;
+    background-image: url("../Resources/Carrinho.PNG");
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+
+#CarrinhoCompras {
+    float: left;
+    background-image: url("../Resources/carrinhoCompras.PNG");
+    background-repeat: no-repeat;
+    background-position: 0 10;
+    width: 80px;
+    height: 80px;
+}
+
+#conteudo {
+    position: relative;
+    width: 90%;
+    height: auto;
+    margin-left: 5%;
+    padding-bottom: 15px;
+}
+
+#rodape {
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    padding-bottom: 10px;
+    position: absolute;
+}
+
+#idiomas {
+    margin: 0 auto;
+    text-align: right;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.clear {
+    clear: both;
+}

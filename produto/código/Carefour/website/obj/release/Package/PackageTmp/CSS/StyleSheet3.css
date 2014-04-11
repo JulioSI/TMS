@@ -1,0 +1,145 @@
+﻿#container {
+    min-height: 100%;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#subtotal {
+    font-size: 25px;
+    border-collapse: collapse;
+    border: 1px solid #666666;
+    text-align: center;
+    background: #f6f6f6;
+    height: 30px;
+    width: 250px;
+    margin-top: 5px;
+    float: right ;
+}
+
+#cabecalho {
+    font-size: 80px;
+    text-align: center;
+    height: 100px;
+    width: 90%;
+    margin-left: 5%;
+    background-image: url("../Resources/Carrinho.PNG");
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+
+#CarrinhoCompras {
+    float: left;
+    background-image: url("../Resources/carrinhoCompras.PNG");
+    background-repeat: no-repeat;
+    background-position: 0 10;
+    width: 80px;
+    height: 80px;
+}
+
+#conteudo {
+    position: relative;
+    width: 90%;
+    height: auto;
+    margin-left: 5%;
+    padding-bottom: 15px;
+}
+
+#rodape {
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    padding-bottom: 10px;
+    position: absolute;
+}
+
+#idiomas {
+    margin: 0 auto;
+    text-align: right;
+    width: 90%;
+    margin-left: 5%;
+}
+
+#botoes {
+    margin-top: 5px;
+    height: 30px;
+    width: 90%;
+    margin-left: 4%;
+}
+
+#btnCarrinho {
+    margin-left: 32%;
+    position: relative;
+    float: left;
+}
+
+#btnComprarProduto {
+    margin-left: 45px;
+    position: relative;
+    float: left;
+}
+
+#btnFecharCompra {
+    margin-left: 45px;
+    position: relative;
+    float: left;
+}
+
+input {
+    aligment: center;
+    height: 25px;
+    width: 150px;
+}
+
+.clear {
+    clear: both;
+}
+
+/* TABELA */
+
+table {
+    border-collapse: collapse;
+    border: 1px solid #666666;
+    font: normal 11px verdana, arial, helvetica, sans-serif;
+    color: #363636;
+    background: #f6f6f6;
+    text-align: left;
+}
+
+caption {
+    text-align: center;
+    font: bold 16px arial, helvetica, sans-serif;
+    background: transparent;
+    padding: 6px 4px 8px 0px;
+    color: #CC00FF;
+    text-transform: uppercase;
+}
+
+thead, tfoot {
+    background: url(bg1.png) repeat-x;
+    text-align: left;
+    height: 30px;
+}
+
+    thead th, tfoot th {
+        padding: 5px;
+    }
+
+table a {
+    color: #333333;
+    text-decoration: none;
+}
+
+    table a:hover {
+        text-decoration: underline;
+    }
+
+tr.odd {
+    background: #f1f1f1;
+}
+
+tbody th, tbody td {
+    padding: 5px;
+    
+}

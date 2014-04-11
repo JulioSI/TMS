@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/CSS/StyleSheet1.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Carofour - Seja bem Vindo</title>
+</head>
+
+<body>
+    <div id="container">
+
+        <div id="idiomas">Português / Espanhol</div>
+        <div id="cabecalho">
+            <div id="CarrinhoCompras"></div>
+            Carofour
+        </div>
+
+        <div id="conteudo">
+            <div id="boasVindas">O Carefour sempre trazendo o melhor da roça para sua mesa!. Aproveite nossas ofertas.</div>
+            <div id="laticinios"> @Html.ActionLink("Laticínios", "Produtos", new {produto = "Laticinios"})</div>
+            <div id="carnes">     @Html.ActionLink("Carnes", "Produtos", new { produto = "Carnes" })</div>
+            <div id="padaria">    @Html.ActionLink("Padaria", "Produtos", new { produto = "Padaria" }) </div>
+            <div id="hortifrutigranjeiros">@Html.ActionLink("Hortifrutigranjeiros", "Produtos", new { produto = "Hortifrutigranjeiros" })</div>
+            <div class="clear"></div>
+        </div>
+     
+        <div id="rodape"><hr>Carofour - contato@carofour.com.br</div>        
+    </div>
+</body>
+</html>

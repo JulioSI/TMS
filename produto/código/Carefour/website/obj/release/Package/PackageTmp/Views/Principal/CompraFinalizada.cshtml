@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "CompraFinalizada";
+}
+
+<!DOCTYPE html>
+
+<head>
+    <link href="~/CSS/StyleSheet5.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Carofour</title>
+</head>
+
+<body>
+    <div id="container">
+
+        <div id="idiomas">Português / Espanhol</div>
+        <div id="cabecalho">
+            <div id="CarrinhoCompras"></div>
+            Carofour
+        </div>
+
+        <div id="conteudo">
+
+            <div id="formularioCliente">
+                <fieldset>
+                    <legend>Endereço de Entrega</legend>
+                    Thales Matos Rodrigues Vidal<br />
+                    (31) 8400-0190 / (31) 3386-3563 <br />
+                    <br />
+                    Rua Isis Magalhães, 108 - Betânia<br />
+                    30590-255<br />
+                    Belo Horizonte / Minas Gerais<br />
+                    Brasil<br />                    
+                </fieldset>
+            </div>
+
+            <div id="CondicoesCompra">
+                <fieldset>
+                    <legend>Pedido</legend>
+                    Ñúmero do Pedido: 3257896<br />
+                    Previsão de Entrega: 15/05/2013<br />
+                </fieldset>
+
+            </div>
+
+            <div id="subtotal">
+                <fieldset>
+                    <legend>Resumo do Pedido</legend>
+                    2 - Contra filé<br />
+                    1 - Caixa de Leite Longa Vida<br />
+                    5 - Engradados de Refrigerante Coca-Cola<br /><br />
+
+                    <b>SubTotal:</b> R$ 45,80
+                </fieldset>
+            </div>
+
+            <div id="Instrucoes">
+                <fieldset>
+                    <legend>Informações Complementares</legend>
+                    O carefour busca o melhor atendimento sempre.<br />
+                    Caso tenha alguma dúvida em relação a sua compra entre <br />
+                    em contato com o nosso SAC 0800 2014 040. <br />
+                </fieldset>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+
+        <div id="rodape">
+            @Html.ActionLink("Voltar para página inicial", "Index")
+            <hr>Carofour - contato@carofour.com.br
+        </div>
+
+    </div>
+</body>
