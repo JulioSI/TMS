@@ -17,7 +17,7 @@ namespace WebSite.Controllers
             return View();
         }
 
-        /*public ActionResult Produtos(string produto)
+        public ActionResult Produtos(string produto)
         {
             Produto model;
 
@@ -88,6 +88,6 @@ namespace WebSite.Controllers
         public ActionResult CompraFinalizada()
         {
             return View();
-        }*/
+        }
     }
 }

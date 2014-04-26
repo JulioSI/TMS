@@ -130,44 +130,37 @@ D:\Dropbox\PUC\7° Periodo\Tecnologias Web\TP - Carefour\Carefour\WebSite\obj\De
 D:\Dropbox\PUC\7° Periodo\Tecnologias Web\TP - Carefour\Carefour\WebSite\obj\Debug\WebSite.dll
 D:\Dropbox\PUC\7° Periodo\Tecnologias Web\TP - Carefour\Carefour\WebSite\obj\Debug\WebSite.pdb
 D:\Dropbox\PUC\7° Periodo\Tecnologias Web\TP - Carefour\Carefour\WebSite\obj\Debug\WebSite.csprojResolveAssemblyReference.cache
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\WebSite.dll.config
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\WebSite.dll
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\WebSite.pdb
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\Newtonsoft.Json.dll
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\System.Net.Http.dll
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\System.Net.Http.Formatting.dll
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\System.Net.Http.WebRequest.dll
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\System.Web.Helpers.dll
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\System.Web.Http.dll
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\System.Web.Http.WebHost.dll
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\System.Web.Mvc.dll
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\System.Web.Razor.dll
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\System.Web.WebPages.dll
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\System.Web.WebPages.Razor.dll
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\Newtonsoft.Json.xml
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\System.Net.Http.xml
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\System.Net.Http.Formatting.xml
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\System.Net.Http.WebRequest.xml
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\System.Web.Helpers.xml
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\System.Web.Http.xml
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\System.Web.Http.WebHost.xml
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\System.Web.Mvc.xml
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\System.Web.Razor.xml
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\System.Web.WebPages.xml
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\System.Web.WebPages.Deployment.xml
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\System.Web.WebPages.Razor.xml
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\pt-br\System.Net.Http.resources.dll
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\bin\pt-br\System.Net.Http.WebRequest.resources.dll
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\obj\Debug\WebSite.csprojResolveAssemblyReference.cache
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\obj\Debug\WebSite.Resource.resources
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\obj\Debug\WebSite.csproj.GenerateResource.Cache
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\obj\Debug\WebSite.dll
-C:\Users\Júlio\Dropbox\TP - Carefour\TMS_GUTA_DIVISAO\_CodigoCompleto\Carefour\WebSite\obj\Debug\WebSite.pdb
-C:\Users\Júlio\Documents\GitHub\TP_Carefour\produto\código\Carefour\WebSite\obj\Debug\WebSite.csprojResolveAssemblyReference.cache
-C:\Users\Júlio\Documents\GitHub\TP_Carefour\produto\código\Carefour\WebSite\obj\Debug\WebSite.Resource.resources
-C:\Users\Júlio\Documents\GitHub\TP_Carefour\produto\código\Carefour\WebSite\obj\Debug\WebSite.csproj.GenerateResource.Cache
-C:\Users\Júlio\Documents\GitHub\TP_Carefour\produto\código\Carefour\WebSite\obj\Debug\WebSite.dll
-C:\Users\Júlio\Documents\GitHub\TP_Carefour\produto\código\Carefour\WebSite\obj\Debug\WebSite.pdb
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\obj\Debug\WebSite.csprojResolveAssemblyReference.cache
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\obj\Debug\WebSite.Resource.resources
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\obj\Debug\WebSite.csproj.GenerateResource.Cache
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\obj\Debug\WebSite.dll
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\WebSite.dll
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\WebSite.pdb
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\Newtonsoft.Json.dll
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\System.Net.Http.dll
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\System.Net.Http.Formatting.dll
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\System.Net.Http.WebRequest.dll
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\System.Web.Helpers.dll
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\System.Web.Http.dll
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\System.Web.Http.WebHost.dll
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\System.Web.Mvc.dll
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\System.Web.Razor.dll
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\System.Web.WebPages.Deployment.dll
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\System.Web.WebPages.dll
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\System.Web.WebPages.Razor.dll
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\Newtonsoft.Json.xml
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\System.Net.Http.xml
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\System.Net.Http.Formatting.xml
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\System.Net.Http.WebRequest.xml
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\System.Web.Helpers.xml
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\System.Web.Http.xml
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\System.Web.Http.WebHost.xml
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\System.Web.Mvc.xml
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\System.Web.Razor.xml
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\System.Web.WebPages.xml
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\System.Web.WebPages.Deployment.xml
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\System.Web.WebPages.Razor.xml
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\obj\Debug\WebSite.pdb
+C:\Users\charles\Documents\Visual Studio 2012\Projects\Carefour\WebSite\bin\MySql.Data.dll

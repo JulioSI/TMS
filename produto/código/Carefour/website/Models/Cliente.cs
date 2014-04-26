@@ -43,7 +43,9 @@ namespace WebSite.Models
 
         [DisplayName("Telefone")]
         [Required(ErrorMessage = "O preenchimento do campo telefone é obrigatório.")]
-        public string telefone { get; set; }        
+        public string telefone { get; set; }
+
+        public List<Pedido> listaDePedidos { get; set; }
 
     }
 }
