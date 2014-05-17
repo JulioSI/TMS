@@ -1,0 +1,138 @@
+﻿@model WebSite.Models.Cliente
+
+@{
+    ViewBag.Title = "ConfirmaCompra";
+}
+<!DOCTYPE html>
+
+<head>
+    <link href="~/CSS/ConfirmaCompra.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Carofour - Fechamento da Compra</title>
+</head>
+
+<body>
+    <div id="container">
+
+        <div id="idiomas">Português / Espanhol</div>
+        <div id="cabecalho">
+            <div id="CarrinhoCompras"></div>
+            Carofour
+        </div>
+
+        <div id="conteudo">
+
+            <div id="formularioCliente">
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+
+                    <fieldset>
+                        <legend>Cliente</legend>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.nome)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.nome)
+                            @Html.ValidationMessageFor(model => model.nome)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.email)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.email)
+                            @Html.ValidationMessageFor(model => model.email)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.senha)
+                        </div>
+                        <div class="editor-field">
+                            @Html.PasswordFor(model => model.senha)
+                            @Html.ValidationMessageFor(model => model.senha)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.dataNascimento)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.dataNascimento)
+                            @Html.ValidationMessageFor(model => model.dataNascimento)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.sexo)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.sexo)
+                            @Html.ValidationMessageFor(model => model.sexo)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.endereco)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.endereco)
+                            @Html.ValidationMessageFor(model => model.endereco)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.telefone)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.telefone)
+                            @Html.ValidationMessageFor(model => model.telefone)
+                        </div>
+
+                        <p>
+                            <input type="submit" value="Enviar" />
+                        </p>
+
+                    </fieldset>
+                }
+                
+            </div>
+            
+            
+
+            <div id="CondicoesCompra">
+                <fieldset>
+                    <legend>Forma de Pagamento</legend>
+                    @Html.RadioButton("Boleto", "Boleto"); Boleto
+                    @Html.RadioButton("Cartão", "Cartao"); Cartão
+                </fieldset>
+                
+            </div>
+
+            <div id="subtotal">
+                <fieldset>
+                    <legend>Resumo da Compra</legend>
+                    <b>Frete: Grátis</b> @ViewBag.ValorTotalCompra <br />
+                    <b>Valor da Compra:</b> @ViewBag.ValorTotalCompra <br />
+                    <b>Total:</b> @ViewBag.ValorTotalCompra
+                </fieldset>
+            </div>
+
+            <div id="Instrucoes">
+                <fieldset>
+                    <legend>Informações Complementares</legend>
+                    O carefour busca o melhor atendimento sempre.<br />
+                    Caso tenha alguma dúvida em relação a sua compra entre <br />
+                    em contato com o nosso SAC 0800 2014 040. <br />                                          
+                </fieldset>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+
+        <div id="rodape">
+            @Html.ActionLink("Voltar para página inicial", "Index")
+            <hr>Carofour - contato@carofour.com.br
+        </div>
+
+    </div>
+</body>

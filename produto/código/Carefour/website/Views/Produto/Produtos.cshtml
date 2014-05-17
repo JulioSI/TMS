@@ -1,0 +1,117 @@
+﻿@model List<WebSite.Models.Produto>
+
+@{
+    ViewBag.Title = "Produtos";
+}
+
+<!DOCTYPE html>
+<head>
+    <link href="~/CSS/Produto.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Carofour - Produtos por Categoria</title>
+</head>
+
+<body>
+    <div id="container">
+
+        <div id="idiomas">Português / Espanhol</div>
+        <div id="cabecalho">
+            <div id="CarrinhoCompras"></div>
+            Carofour
+        </div>
+
+   
+            
+       
+        <div id="botoes">
+     
+            <div id="btnCarrinho">
+                <button>@Html.ActionLink("Ver Carrinho", "VisualizarCarrinho", "Carrinho")</button>
+            </div>    
+            <!-- <div id="btnCarrinho"><input type="button" name=btnCarrinho value="Ver Carrinho" onclick=""> </div> -->        
+        </div>
+
+        <div id="conteudo">'
+            <div id="boasVindas">
+                <div id="laticinios"><a href="@Html.ActionLink("Laticínios", "Produtos","Produto", new { tipoCategoria = "Laticínios" })"> <img alt="laticinio" src="../Resources/laticinios2.jpg" /> </a></div>
+                <div id="carnes"> <a href="@Html.ActionLink("Carnes","Produtos", "Produtos", new { tipoCategoria = "Carnes" })"> <img alt="Carnes" src="../Resources/carne2.jpg" /> </a></div>
+                <div id="padaria"> <a href="@Html.ActionLink("Padaria","Produtos", "Produto", new { tipoCategoria = "Padaria" })"> <img alt="Padaria" src="../Resources/padaria2.jpg" /> </a></div>
+                <div id="hortifrutigranjeiros"> <a href="@Html.ActionLink("Hortifrutigranjeiros","Produtos", "Produtos", new { tipoCategoria = "Hortifrutigranjeiros" })"> <img alt="Hortifrutigranjeiros" src="../Resources/hortifrutigranjeiro2.png" /></a></div>
+        
+            </div>
+
+            <div id="grid">
+
+                <table>
+                    <tr>
+                        <th>&nbsp</th>
+                        <th>&nbsp Nome/Descrição</th>
+                        <th>&nbsp Preço &nbsp</th>
+                        <th>&nbsp Quantidade</th>
+                        <th>&nbsp</th>
+                    </tr>
+
+                   @{
+                       List<WebSite.Models.Produto> produtos = new List<WebSite.Models.Produto>();
+                   }
+               
+
+                    @foreach (WebSite.Models.Produto modelProduto in Model)
+                    {
+                        <tr id="linha">
+                            
+                            <td><input type="checkbox" id="check" /></td>
+                            <td><input type="hidden" id="produtoId" value="@modelProduto.id" /></td>
+                            <td>@Html.DisplayFor(model => modelProduto.descricao)</td>
+                            <td>@Html.DisplayFor(model => modelProduto.preco)</td>
+                            <td>@Html.TextBox(modelProduto.id.ToString(), 1, new { size = "20" })</td>
+                            <!--<input type="button" id="addProduto"  value="Adicionar no Carrinho"/>-->
+                            <td>@Html.ActionLink("Comprar", "Comprar")</td> 
+                            
+                        <script type="text/javascript">
+                            $(document).ready(function () {
+                                $('#produtoId').click(function () {
+                                    //if ($('#produtoId').checked == true) {
+                                    //    $.ajax({
+                                    //        type: 'GET',
+                                    //        url: 'Carrinho/AdicionarProduto',
+                                    //        data: $('#produtoId').text(),
+                                    //        contentType: "application/json; charset=utf-8", //<--- Change here
+                                    //        dataType: 'json'
+
+                                    //    });
+                                    //}
+                                    //else
+                                    //    alert("Não foi possível adicionar o produto ao carrinho");
+                                    alert("Ok");
+                                });
+                            });
+                           
+                           
+                    </script>
+                        </tr>
+                        
+                        
+                    }
+
+                   
+                    
+                 
+                    
+                </table>
+
+                
+
+            </div>
+
+            <div class="clear"></div>
+
+        </div>
+
+        <div id="rodape">
+            @Html.ActionLink("Voltar para página inicial", "Index","Principal")
+            <hr>Carofour - contato@carofour.com.br
+        </div>
+
+    </div>
+</body>

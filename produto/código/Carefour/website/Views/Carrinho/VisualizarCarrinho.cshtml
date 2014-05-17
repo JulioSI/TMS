@@ -1,0 +1,77 @@
+﻿@model WebSite.Models.Pedido
+
+@{
+    ViewBag.Title = "VisualizarCarrinho";
+}
+<!DOCTYPE html>
+
+<head>
+    <link href="~/CSS/carrinho.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+
+    <script type="text/javascript">
+        function removerProduto(link) {
+
+            var result = confirm("Deseja excluir esse produto?");
+            if (result) {
+                var row = link.parentNode.parentNode;
+                row.parentNode.removeChild(row);
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+    
+    <title>Carofour - Carrinho de Compras</title>
+</head>
+
+<body>
+    <div id="container">
+
+        <div id="idiomas">Português / Espanhol</div>
+        <div id="cabecalho">
+            <div id="CarrinhoCompras"></div>
+            Carofour
+        </div>
+
+        <div id="botoes"> 
+            <button id="btnComprarProduto">@Html.ActionLink("Comprar Produto(s)", "Index", "Principal")</button>
+            <button id="btnFecharCompra">@Html.ActionLink("Fechar Compra","ConfirmaCompra", "Cliente", new {pedido = Model},null)</button>
+        </div>
+
+        <div id="conteudo">
+
+            <table>
+                <tr>
+                    <th width="800px">&nbsp Nome/Descrição</th>
+                    <th width="150px">&nbsp Preço &nbsp</th>
+                    <th>&nbsp Quantidade</th>
+                    <th>&nbsp</th>
+                </tr>
+
+                @foreach (var item in Model.listaDeItems)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.descricao)</td>
+                        <td>@Html.DisplayFor(modelItem => item.preco)</td>
+                        <td>@Html.TextBox(item.id.ToString(), @Html.DisplayFor(modelItem => item.quantidade), new { size = "20" })</td>
+                        <td>@Html.ActionLink("Atualizar", "AtualizarCarrinho") @Html.ActionLink("Remover", "RemoverItemCarrinho", new { id = @Html.DisplayFor(modelItem => item.id) }, new {onclick = "removerProduto(this)"}) </td>
+                    </tr>
+                }
+            </table>            
+            <div id="subtotal">
+                <b>Subtotal:</b> @ViewBag.SubTotal
+            </div>
+
+
+            <div class="clear"></div>
+        </div>
+
+        <div id="rodape">
+            @Html.ActionLink("Voltar para página inicial", "Index","Principal")
+            <hr>Carofour - contato@carofour.com.br
+        </div>
+
+    </div>
+</body>
