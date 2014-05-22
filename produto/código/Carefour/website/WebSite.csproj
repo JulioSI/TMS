@@ -162,6 +162,7 @@
     <None Include="Resources\madeira.jpg" />
     <None Include="Resources\padaria.jpg" />
     <None Include="Resources\padaria2.jpg" />
+    <Content Include="Scripts\JavaScript1.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -176,9 +177,7 @@
     <Content Include="Views\Principal\ConfirmaCompra.cshtml" />
     <Content Include="Views\Principal\CompraFinalizada.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scripts\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

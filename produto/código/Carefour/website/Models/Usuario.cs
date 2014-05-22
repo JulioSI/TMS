@@ -15,5 +15,19 @@ namespace WebSite.Models
             listaUsuarios.Add(usuarioModelo);
         }
 
+        public string DadosCliente(Cliente cli)
+        {
+            string produto = String.Empty;
+
+            produto += cli.nome  + " " + "<br />";
+            produto += cli.email + " " + "<br /><br />";
+            produto += cli.endereco + " " + "<br />";
+            produto += cli.telefone + " " + "<br /><br />";
+                    
+            //HtmlString retorno = new HtmlString(produto);
+
+            return produto;
+        }
+
     }
 }

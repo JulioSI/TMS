@@ -34,7 +34,6 @@ namespace WebSite.Models
         public DateTime dataNascimento { get; set; }
 
         [DisplayName("Sexo")]
-        [Required(ErrorMessage = "O preenchimento do campo sexo é obrigatório.")]   
         public char sexo { get; set; }
 
         [DisplayName("Endereço")]
