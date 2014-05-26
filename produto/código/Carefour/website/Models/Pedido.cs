@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using WebSite.Persistence;
 
 namespace WebSite.Models
 {
@@ -10,15 +9,11 @@ namespace WebSite.Models
     {
         public int id { get; set; }
         public int numero { get; set; }
-        public List<Item> listaDeItems;
+        public List<Item> listaDeItems = null;
 
         public Pedido(List<Item> listaDeItems)
         {
             this.listaDeItems = listaDeItems;
-        }
-
-        public Pedido()
-        {
         }
 
         public double CalcularCustoTotal(){
@@ -30,18 +25,6 @@ namespace WebSite.Models
             }
 
             return soma;
-        }
-
-        public void FinalizaPedido(List<Item> Pedido, Cliente cli)
-        {
-            // Inserir Cliente
-            ClienteDAO cliente = new ClienteDAO();
-            int codCli = cliente.InserirCliente(cli);
-
-            // Inserir Pedido
-            PedidoDAO _pedido = new PedidoDAO();
-            this.numero  = _pedido.InserirPedido(codCli, Pedido);
-
         }
 
 

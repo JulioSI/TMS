@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using WebSite.Persistence;
 
 namespace WebSite.Models
 {
@@ -13,14 +12,5 @@ namespace WebSite.Models
         public string urlImagem { get; set; }
 
         public List<Produto> listaDeProdutos { get; set; }
-
-        public List<Categoria> GetCategorias()
-        {
-            CategoriaDAO AL = new CategoriaDAO();
-            List<Categoria> Lista = AL.ObterCategoriasCadastradas();
-
-            return Lista;
-        }
-
     }
 }
