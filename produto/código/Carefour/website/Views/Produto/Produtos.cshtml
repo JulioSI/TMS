@@ -1,4 +1,4 @@
-﻿@model List<WebSite.Models.Produto>
+﻿@model IEnumerable<WebSite.Models.Item>
 
 @{
     ViewBag.Title = "Produtos";
@@ -6,7 +6,7 @@
 
 <!DOCTYPE html>
 <head>
-    <link href="~/CSS/Produto.css" rel="stylesheet" />
+    <link href="~/CSS/Principal.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width" />
     <title>Carofour - Produtos por Categoria</title>
 </head>
@@ -20,88 +20,45 @@
             Carofour
         </div>
 
-   
-            
-       
+
         <div id="botoes">
-     
-            <div id="btnCarrinho">
-                <button>@Html.ActionLink("Ver Carrinho", "VisualizarCarrinho", "Carrinho")</button>
-            </div>    
-            <!-- <div id="btnCarrinho"><input type="button" name=btnCarrinho value="Ver Carrinho" onclick=""> </div> -->        
+            <div id="btnCarrinho"><input type="button" name=btnCarrinho value="Ver Carrinho" onclick="location.href='@Url.Action("Carrinho", "Carrinho")    '"> </div>
         </div>
 
-        <div id="conteudo">'
-            <div id="boasVindas">
-                <div id="laticinios"><a href="@Html.ActionLink("Laticínios", "Produtos","Produto", new { tipoCategoria = "Laticínios" })"> <img alt="laticinio" src="../Resources/laticinios2.jpg" /> </a></div>
-                <div id="carnes"> <a href="@Html.ActionLink("Carnes","Produtos", "Produtos", new { tipoCategoria = "Carnes" })"> <img alt="Carnes" src="../Resources/carne2.jpg" /> </a></div>
-                <div id="padaria"> <a href="@Html.ActionLink("Padaria","Produtos", "Produto", new { tipoCategoria = "Padaria" })"> <img alt="Padaria" src="../Resources/padaria2.jpg" /> </a></div>
-                <div id="hortifrutigranjeiros"> <a href="@Html.ActionLink("Hortifrutigranjeiros","Produtos", "Produtos", new { tipoCategoria = "Hortifrutigranjeiros" })"> <img alt="Hortifrutigranjeiros" src="../Resources/hortifrutigranjeiro2.png" /></a></div>
-        
+
+        <div id="conteudo">
+            <div id="boasVindas2">
+                <div id="laticinios2"><a href="@Url.Action("Produtos", "Produto", new { produto = "3" })"> <img alt="laticinio" src="../Resources/laticinios2.jpg" /> </a></div>
+                <div id="carnes2"> <a href="@Url.Action("Produtos", "Produto", new { produto = "1" })"> <img alt="Carnes" src="../Resources/carne2.jpg" /> </a></div>
+                <div id="padaria2"> <a href="@Url.Action("Produtos", "Produto", new { produto = "4" })"> <img alt="Padaria" src="../Resources/padaria2.jpg" /> </a></div>
+                <div id="hortifrutigranjeiros2"> <a href="@Url.Action("Produtos", "Produto", new { produto = "2" })"> <img alt="Hortifrutigranjeiros" src="../Resources/hortifrutigranjeiro2.png" /></a></div>
             </div>
 
             <div id="grid">
-
-                <table>
-                    <tr>
-                        <th>&nbsp</th>
-                        <th>&nbsp Nome/Descrição</th>
-                        <th>&nbsp Preço &nbsp</th>
-                        <th>&nbsp Quantidade</th>
-                        <th>&nbsp</th>
-                    </tr>
-
-                   @{
-                       List<WebSite.Models.Produto> produtos = new List<WebSite.Models.Produto>();
-                   }
-               
-
-                    @foreach (WebSite.Models.Produto modelProduto in Model)
-                    {
-                        <tr id="linha">
-                            
-                            <td><input type="checkbox" id="check" /></td>
-                            <td><input type="hidden" id="produtoId" value="@modelProduto.id" /></td>
-                            <td>@Html.DisplayFor(model => modelProduto.descricao)</td>
-                            <td>@Html.DisplayFor(model => modelProduto.preco)</td>
-                            <td>@Html.TextBox(modelProduto.id.ToString(), 1, new { size = "20" })</td>
-                            <!--<input type="button" id="addProduto"  value="Adicionar no Carrinho"/>-->
-                            <td>@Html.ActionLink("Comprar", "Comprar")</td> 
-                            
-                        <script type="text/javascript">
-                            $(document).ready(function () {
-                                $('#produtoId').click(function () {
-                                    //if ($('#produtoId').checked == true) {
-                                    //    $.ajax({
-                                    //        type: 'GET',
-                                    //        url: 'Carrinho/AdicionarProduto',
-                                    //        data: $('#produtoId').text(),
-                                    //        contentType: "application/json; charset=utf-8", //<--- Change here
-                                    //        dataType: 'json'
-
-                                    //    });
-                                    //}
-                                    //else
-                                    //    alert("Não foi possível adicionar o produto ao carrinho");
-                                    alert("Ok");
-                                });
-                            });
-                           
-                           
-                    </script>
+                @using (Html.BeginForm("Produtos","Produto",FormMethod.Post))
+                {
+                    <table>
+                        <tr>
+                            <th>&nbsp</th>
+                            <th>&nbsp Nome/Descrição</th>
+                            <th>&nbsp Preço &nbsp</th>
+                            <th>&nbsp Quantidade</th>
+                            <th>&nbsp</th>
                         </tr>
-                        
-                        
-                    }
 
-                   
-                    
-                 
-                    
-                </table>
-
-                
-
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td><input type="checkbox" name="produtoId" value="@Html.DisplayFor(modelItem => item.id)"  /></td>
+                                <td>@Html.DisplayFor(modelItem => item.descricao)</td>
+                                <td>R$ @Html.DisplayFor(modelItem => item.preco)</td>  
+                                <td>@Html.TextBox("quantidade", item.quantidade)</td>  
+                                <td><input type="submit" value="Comprar Selecionados" /></td>
+                            </tr>
+                        }
+                       
+                    </table>
+                }
             </div>
 
             <div class="clear"></div>

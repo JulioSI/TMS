@@ -1,13 +1,11 @@
-﻿@model WebSite.Models.Cliente;
-
-@{
+﻿@{
     ViewBag.Title = "CompraFinalizada";
 }
 
 <!DOCTYPE html>
 
 <head>
-    <link href="~/CSS/CompraFinalizada.css" rel="stylesheet" />
+    <link href="~/CSS/Principal.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width" />
     <title>Carofour</title>
 </head>
@@ -26,33 +24,32 @@
             <div id="formularioCliente">
                 <fieldset>
                     <legend>Endereço de Entrega</legend>
-                    @Model.nome<br />
-                    @Model.telefone <br />
                     <br />
-                    @Model.endereco<br />
+
+                    @ViewBag.DadosCompra
+                    
                     <br />
-                    Belo Horizonte / Minas Gerais<br />
-                    Brasil<br />                    
+                    <br />
+                    <br />
+                    <b><i>O Carefour agradece sua compra! Volte Sempre!!!</i></b>
+                                     
                 </fieldset>
             </div>
 
             <div id="CondicoesCompra">
                 <fieldset>
                     <legend>Pedido</legend>
-                    Ñúmero do Pedido: 3257896<br />
-                    Previsão de Entrega: 15/05/2013<br />
+                    <b>Número do Pedido: @ViewBag.NumeroPedido<br /></b>
+                    Previsão de Entrega: @ViewBag.DataEntrega<br />
                 </fieldset>
 
             </div>
 
-            <div id="subtotal">
+            <div id="subtotal2">
                 <fieldset>
                     <legend>Resumo do Pedido</legend>
-                    2 - Contra filé<br />
-                    1 - Caixa de Leite Longa Vida<br />
-                    5 - Engradados de Refrigerante Coca-Cola<br /><br />
-
-                    <b>SubTotal:</b> R$ 45,80
+                    @ViewBag.ResumoPedido
+                    <b>SubTotal:</b> @ViewBag.ValorTotalCompra
                 </fieldset>
             </div>
 
@@ -69,7 +66,7 @@
         </div>
 
         <div id="rodape">
-            @Html.ActionLink("Voltar para página inicial", "Index")
+            @Html.ActionLink("Voltar para página inicial", "Index","Principal")
             <hr>Carofour - contato@carofour.com.br
         </div>
 
