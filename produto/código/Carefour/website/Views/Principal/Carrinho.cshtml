@@ -6,23 +6,10 @@
 <!DOCTYPE html>
 
 <head>
-    <link href="~/CSS/carrinho.css" rel="stylesheet" />
+    <link href="~/CSS/Principal.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width" />
-
-    <script type="text/javascript">
-        function removerProduto(link) {
-
-            var result = confirm("Deseja excluir esse produto?");
-            if (result) {
-                var row = link.parentNode.parentNode;
-                row.parentNode.removeChild(row);
-                return true;
-            } else {
-                return false;
-            }
-        }
-    </script>
-    
+    <script src="~/Scripts/JavaScript1.js"></script>
+    <script src="~/Scripts/jquery-1.11.1.min.js"></script>
     <title>Carofour - Carrinho de Compras</title>
 </head>
 
@@ -35,7 +22,7 @@
             Carofour
         </div>
 
-        <div id="botoes">            
+        <div id="botoes">
             <div id="btnComprarProduto"><input type="button" name=btnComprarProduto value="Comprar Produto(s)" onclick="location.href='@Url.Action("Produtos", "Principal", new { produto = "Laticinios" })'"></div>
             <div id="btnFecharCompra"><input type="button" name=btnFechaCompra value="Fechar Compra" onclick="location.href='@Url.Action("ConfirmaCompra","Principal")'"></div>
         </div>
@@ -50,16 +37,28 @@
                     <th>&nbsp</th>
                 </tr>
 
+
+
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td>@Html.DisplayFor(modelItem => item.descricao)</td>
-                        <td>@Html.DisplayFor(modelItem => item.preco)</td>
-                        <td>@Html.TextBox(item.id.ToString(), @Html.DisplayFor(modelItem => item.quantidade), new { size = "20" })</td>
-                        <td>@Html.ActionLink("Atualizar", "AtualizarCarrinho") @Html.ActionLink("Remover", "RemoverItemCarrinho", new { id = @Html.DisplayFor(modelItem => item.id) }, new {onclick = "removerProduto(this)"}) </td>
+                        @using (Html.BeginForm())
+                        {
+                            <td> <input type="hidden"  name="produtoId" value="@Html.DisplayFor(modelItem => item.id)" />
+                                @Html.DisplayFor(modelItem => item.descricao)</td>
+                            <td>@Html.DisplayFor(modelItem => item.preco)</td>
+                            <td>@Html.TextBox("quantidade", item.quantidade)</td>
+                            <td>@Html.ActionLink("Remover", "RemoverItemCarrinho", new { id = @Html.DisplayFor(modelItem => item.id) }) </td>
+                            <td><input type="submit" value="Atualizar" /></td>
+                        }
+                            
                     </tr>
                 }
-            </table>            
+
+
+
+            </table>
+
             <div id="subtotal">
                 <b>Subtotal:</b> @ViewBag.SubTotal
             </div>
@@ -67,6 +66,7 @@
 
             <div class="clear"></div>
         </div>
+
 
         <div id="rodape">
             @Html.ActionLink("Voltar para página inicial", "Index")

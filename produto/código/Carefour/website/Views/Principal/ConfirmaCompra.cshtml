@@ -6,8 +6,20 @@
 <!DOCTYPE html>
 
 <head>
-    <link href="~/CSS/ConfirmaCompra.css" rel="stylesheet" />
-    <meta name="viewport" content="width=device-width" />
+    
+    <meta name="viewport" content="width=device-width" />    
+    <link href="~/CSS/Principal.css" rel="stylesheet" />
+    <script src="~/Scripts/JavaScript1.js"></script>
+    <script src="~/Scripts/jquery-1.11.1.min.js"></script>
+ 
+    <script>
+        //Quando o usuário digitar o telefone só será possivel número.
+        $(document).ready(function () {
+            $("#telefone").keypress(verificaNumero);
+        });        
+    </script>
+
+
     <title>Carofour - Fechamento da Compra</title>
 </head>
 
@@ -22,7 +34,7 @@
 
         <div id="conteudo">
 
-            <div id="formularioCliente">
+            <div id="formularioCliente2">
 
                 @using (Html.BeginForm())
                 {
@@ -65,11 +77,11 @@
                         </div>
 
                         <div class="editor-label">
-                            @Html.LabelFor(model => model.sexo)
+                            @Html.LabelFor(model => model.sexo)                            
                         </div>
                         <div class="editor-field">
-                            @Html.EditorFor(model => model.sexo)
-                            @Html.ValidationMessageFor(model => model.sexo)
+                            Feminino @Html.RadioButtonFor(model => model.sexo, "0")
+                            Masculino @Html.RadioButtonFor(model => model.sexo, "1")                            
                         </div>
 
                         <div class="editor-label">
@@ -86,10 +98,11 @@
                         <div class="editor-field">
                             @Html.EditorFor(model => model.telefone)
                             @Html.ValidationMessageFor(model => model.telefone)
+                         
                         </div>
 
                         <p>
-                            <input type="submit" value="Enviar" />
+                            <input type="submit" value="Confirmar Compra" onclick="return verificarDadosCliente()" />
                         </p>
 
                     </fieldset>
@@ -97,32 +110,34 @@
                 
             </div>
             
-            
-
-            <div id="CondicoesCompra">
+            <div id="CondicoesCompra2">
                 <fieldset>
                     <legend>Forma de Pagamento</legend>
-                    @Html.RadioButton("Boleto", "Boleto"); Boleto
-                    @Html.RadioButton("Cartão", "Cartao"); Cartão
+                    <input type="radio" name="sex" value="Boleto">Boleto<br>
+                    <input type="radio" name="sex" value="Cartao">Cartão
                 </fieldset>
-                
+
             </div>
 
-            <div id="subtotal">
+            <div id="subtotal3">
                 <fieldset>
                     <legend>Resumo da Compra</legend>
-                    <b>Frete: Grátis</b> @ViewBag.ValorTotalCompra <br />
+                    @ViewBag.ItensPedido
+                    <br />
+                    <b>Frete: Grátis</b><br />
                     <b>Valor da Compra:</b> @ViewBag.ValorTotalCompra <br />
                     <b>Total:</b> @ViewBag.ValorTotalCompra
                 </fieldset>
             </div>
 
-            <div id="Instrucoes">
+            <div id="Instrucoes2">
                 <fieldset>
                     <legend>Informações Complementares</legend>
+                    <i>Preencha seus dados e click em "Finalizar Compra" para confirmar seu pedido</i> <br /><br />
+
                     O carefour busca o melhor atendimento sempre.<br />
                     Caso tenha alguma dúvida em relação a sua compra entre <br />
-                    em contato com o nosso SAC 0800 2014 040. <br />                                          
+                    em contato com o nosso SAC 0800 2014 040. <br />
                 </fieldset>
             </div>
 

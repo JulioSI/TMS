@@ -2,7 +2,7 @@
 
 <html>
 <head>
-    <link href="~/CSS/Index.css" rel="stylesheet" />
+    <link href="~/CSS/Principal.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width" />
     <title>Carofour - Seja bem Vindo</title>
 </head>
@@ -18,10 +18,10 @@
 
         <div id="conteudo">
             <div id="boasVindas">O Carefour sempre trazendo o melhor da roça para sua mesa!. Aproveite nossas ofertas.</div>
-            <div id="laticinios"> @Html.ActionLink("Laticínios", "Produtos", new {produto = "Laticinios"})</div>
-            <div id="carnes">     @Html.ActionLink("Carnes", "Produtos", new { produto = "Carnes" })</div>
-            <div id="padaria">    @Html.ActionLink("Padaria", "Produtos", new { produto = "Padaria" }) </div>
-            <div id="hortifrutigranjeiros">@Html.ActionLink("Hortifrutigranjeiros", "Produtos", new { produto = "Hortifrutigranjeiros" })</div>
+            <div id="laticinios"> @Html.ActionLink("Laticínios","Produtos","Produto", new {produto = "3"},null)</div>
+            <div id="carnes">     @Html.ActionLink("Carnes", "Produtos","Produto", new { produto = "1" },null)</div>
+            <div id="padaria">    @Html.ActionLink("Padaria", "Produtos","Produto", new { produto = "4" },null) </div>
+            <div id="hortifrutigranjeiros">@Html.ActionLink("Hortifrutigranjeiros", "Produtos","Produto", new { produto = "2" },null)</div>
             <div class="clear"></div>
         </div>
      

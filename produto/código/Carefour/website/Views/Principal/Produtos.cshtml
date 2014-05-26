@@ -6,7 +6,7 @@
 
 <!DOCTYPE html>
 <head>
-    <link href="~/CSS/Produto.css" rel="stylesheet" />
+    <link href="~/CSS/Principal.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width" />
     <title>Carofour - Produtos por Categoria</title>
 </head>
@@ -22,41 +22,42 @@
 
 
         <div id="botoes">
-            <div id="btnCarrinho"><input type="button" name=btnCarrinho value="Ver Carrinho" onclick="location.href='@Url.Action("Carrinho", "Principal")'"> </div>            
+            <div id="btnCarrinho"><input type="button" name=btnCarrinho value="Ver Carrinho" onclick="location.href='@Url.Action("Carrinho", "Principal")'"> </div>
         </div>
 
 
         <div id="conteudo">
-            <div id="boasVindas">
-                <div id="laticinios"><a href="@Url.Action("Produtos", "Principal", new { produto = "Laticinios" })"> <img alt="laticinio" src="../Resources/laticinios2.jpg" /> </a></div>
-                <div id="carnes"> <a href="@Url.Action("Produtos", "Principal", new { produto = "Carnes" })"> <img alt="Carnes" src="../Resources/carne2.jpg" /> </a></div>
-                <div id="padaria"> <a href="@Url.Action("Produtos", "Principal", new { produto = "Padaria" })"> <img alt="Padaria" src="../Resources/padaria2.jpg" /> </a></div>
-                <div id="hortifrutigranjeiros"> <a href="@Url.Action("Produtos", "Principal", new { produto = "Hortifrutigranjeiros" })"> <img alt="Hortifrutigranjeiros" src="../Resources/hortifrutigranjeiro2.png" /></a></div>
+            <div id="boasVindas2">
+                <div id="laticinios2"><a href="@Url.Action("Produtos", "Principal", new { produto = "3" })"> <img alt="laticinio" src="../Resources/laticinios2.jpg" /> </a></div>
+                <div id="carnes2"> <a href="@Url.Action("Produtos", "Principal", new { produto = "1" })"> <img alt="Carnes" src="../Resources/carne2.jpg" /> </a></div>
+                <div id="padaria2"> <a href="@Url.Action("Produtos", "Principal", new { produto = "4" })"> <img alt="Padaria" src="../Resources/padaria2.jpg" /> </a></div>
+                <div id="hortifrutigranjeiros2"> <a href="@Url.Action("Produtos", "Principal", new { produto = "2" })"> <img alt="Hortifrutigranjeiros" src="../Resources/hortifrutigranjeiro2.png" /></a></div>
             </div>
 
             <div id="grid">
-
-                <table>
-                    <tr>
-                        <th>&nbsp</th>
-                        <th>&nbsp Nome/Descrição</th>
-                        <th>&nbsp Preço &nbsp</th>
-                        <th>&nbsp Quantidade</th>
-                        <th>&nbsp</th>
-                    </tr>
-
-                    @foreach (var item in Model)
-                    {
+                @using (Html.BeginForm())
+                {
+                    <table>
                         <tr>
-                            <td><input type="checkbox" name="produtoId" value="@Html.DisplayFor(modelItem => item.id)" /></td>
-                            <td>@Html.DisplayFor(modelItem => item.descricao)</td>
-                            <td>@Html.DisplayFor(modelItem => item.preco)</td>
-                            <td>@Html.TextBox(item.id.ToString(), 1, new { size = "20" })</td>
-                            <td>@Html.ActionLink("Comprar", "Comprar")</td>
+                            <th>&nbsp</th>
+                            <th>&nbsp Nome/Descrição</th>
+                            <th>&nbsp Preço &nbsp</th>
+                            <th>&nbsp Quantidade</th>
+                            <th>&nbsp</th>
                         </tr>
-                    }
-                </table>
 
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td><input type="checkbox" name="produtoId" value="@Html.DisplayFor(modelItem => item.id)"  /></td>
+                                <td>@Html.DisplayFor(modelItem => item.descricao)</td>
+                                <td>R$ @Html.DisplayFor(modelItem => item.preco)</td>  
+                                <td>@Html.TextBox("quantidade", item.quantidade)</td>  
+                                <td><input type="submit" value="Comprar Selecionados" /></td>
+                            </tr>
+                        }
+                    </table>
+                }
             </div>
 
             <div class="clear"></div>
