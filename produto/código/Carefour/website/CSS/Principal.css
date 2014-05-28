@@ -47,7 +47,7 @@
 }
 
 #boasVindas {
-    margin-left: 5px;
+    margin-left: 45px;
     float: left;
     margin-top: 10px;
     background: snow;
@@ -58,7 +58,7 @@
     text-align: center;
     background-image: url(../Resources/madeira.jpg);
     background-repeat: repeat;
-    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;  
 }
 
 #boasVindas2 {
@@ -70,66 +70,13 @@
     background-repeat: repeat;
 }
 
-
-#laticinios {
-    margin-left: 20px;
-    margin-top: 10px;
+#ContainerCategorias {
+    height: 410px;
+    width: 900px;
+    overflow: Auto;
     float: left;
-    position: relative;
-    width: 450px;
-    height: 200px;
-    background: #2E8B57;
-    background-image: url("../Resources/laticinios.jpg");
-    background-repeat: no-repeat;
-    font-size: 50px;
-    color: Snow;
-    font-style: oblique;
 }
 
-#carnes {
-    margin-left: 20px;
-    margin-top: 10px;
-    float: left;
-    position: relative;
-    width: 450px;
-    height: 200px;
-    background: #00FA9A;
-    background-image: url("../Resources/carne.jpg");
-    background-repeat: no-repeat;
-    font-size: 80px;
-    color: Snow;
-    font-style: oblique;
-}
-
-#padaria {
-    margin-left: 20px;
-    margin-top: 10px;
-    float: left;
-    position: relative;
-    width: 450px;
-    height: 200px;
-    background: #BDB76B;
-    background-image: url("../Resources/padaria.jpg");
-    background-repeat: no-repeat;
-    font-size: 50px;
-    color: Snow;
-    font-style: oblique;
-}
-
-#hortifrutigranjeiros {
-    margin-left: 20px;
-    margin-top: 10px;
-    float: left;
-    position: relative;
-    width: 450px;
-    height: 200px;
-    background: #CD853F;
-    background-image: url("../Resources/hortifrutigranjeiro.png");
-    background-repeat: no-repeat;
-    font-size: 50px;
-    color: Snow;
-    font-style: oblique;
-}
 
 .clear {
     clear: both;
@@ -279,7 +226,7 @@ tbody th, tbody td {
     text-align: center;
     background: #f6f6f6;
     height: 30px;
-    width: 250px;
+    width: 350px;
     margin-top: 5px;
     float: right ;
 }

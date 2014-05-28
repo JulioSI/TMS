@@ -14,10 +14,10 @@ namespace WebSite.Models
 
         public List<Produto> listaDeProdutos { get; set; }
 
-        public List<Categoria> GetCategorias()
+        public List<Categoria> GetCategorias(string idioma)
         {
             CategoriaDAO AL = new CategoriaDAO();
-            List<Categoria> Lista = AL.ObterCategoriasCadastradas();
+            List<Categoria> Lista = AL.ObterCategoriasCadastradas(idioma);
 
             return Lista;
         }

@@ -16,24 +16,66 @@ namespace WebSite.Controllers
         private static string retorno;
         private HtmlString dadosCompra;
         private ProdutoController produtoController = new ProdutoController();
-        //
-        // GET: /Cliente/
+
+        private void AtualizarDicionario()
+        {
+            if (Session["Idioma"] == null)
+                Session["Idioma"] = "PT";
+
+            ViewBag.Voltar = Tradutor.Traduzir("Voltar", (String)Session["Idioma"]);
+            ViewBag.Cliente = Tradutor.Traduzir("Cliente", (String)Session["Idioma"]);
+            ViewBag.ConfirmaCompra = Tradutor.Traduzir("ConfirmaCompra", (String)Session["Idioma"]);
+            ViewBag.FormaPg = Tradutor.Traduzir("FormaPg", (String)Session["Idioma"]);
+            ViewBag.Boleto = Tradutor.Traduzir("Boleto", (String)Session["Idioma"]);
+            ViewBag.Cartao = Tradutor.Traduzir("Cartao", (String)Session["Idioma"]);
+            ViewBag.Resumo = Tradutor.Traduzir("Resumo", (String)Session["Idioma"]);
+            ViewBag.Frete = Tradutor.Traduzir("Frete", (String)Session["Idioma"]);
+            ViewBag.Valor = Tradutor.Traduzir("produto_preco", (String)Session["Idioma"]);
+            ViewBag.Inf = Tradutor.Traduzir("inf", (String)Session["Idioma"]);
+            ViewBag.InfA = Tradutor.Traduzir("infA", (String)Session["Idioma"]);
+            ViewBag.InfB = Tradutor.Traduzir("infB", (String)Session["Idioma"]);
+            ViewBag.InfC = Tradutor.Traduzir("infc", (String)Session["Idioma"]);
+            ViewBag.EndEntrega = Tradutor.Traduzir("EndEntrega", (String)Session["Idioma"]);
+            ViewBag.Pedido = Tradutor.Traduzir("Pedido", (String)Session["Idioma"]);
+            ViewBag.NumP = Tradutor.Traduzir("numP", (String)Session["Idioma"]);
+            ViewBag.PrevEnt = Tradutor.Traduzir("prevEnt", (String)Session["Idioma"]);
+        }
+
 
         public ActionResult Index()
         {
+            AtualizarDicionario();
             return View();
         }
         public ActionResult ConfirmaCompra()
         {
+            AtualizarDicionario();
+            if (Session["Carrinho"] == null)
+            {
+                return RedirectToAction("Index", "Principal");
+            }
+            else
+            {
+                ViewBag.ValorTotalCompra = produtoController.GetProduto().CalculaCarrinho();
+                ViewBag.ItensPedido = produtoController.GetProduto().ResumoPedido(produtoController.GetProduto().listaProdutos);
+                return View();
+            }
+        }
 
-            ViewBag.ValorTotalCompra = produtoController.GetProduto().CalculaCarrinho();
-            ViewBag.ItensPedido = produtoController.GetProduto().ResumoPedido(produtoController.GetProduto().listaProdutos);
-            return View();
+        public ActionResult Idioma(string id)
+        {
+            if (id == "PT")
+                Session["Idioma"] = "PT";
+            else
+                Session["Idioma"] = "EN";
+
+            return RedirectToAction("ConfirmaCompra", "Cliente");
         }
 
         [HttpPost]
         public ActionResult ConfirmaCompra(Cliente _usuario)
         {
+            AtualizarDicionario();
             if (!String.IsNullOrEmpty(_usuario.nome))
             {
                 Pedido AL = new Pedido(produtoController.GetProduto().listaProdutos);
@@ -50,6 +92,7 @@ namespace WebSite.Controllers
 
         public ActionResult CompraFinalizada()
         {
+            AtualizarDicionario();
             this.dadosCompra = new HtmlString(retorno);
             ViewBag.DadosCompra = this.dadosCompra;
             ViewBag.NumeroPedido = numeroPedido;

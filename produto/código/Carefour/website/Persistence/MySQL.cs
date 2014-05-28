@@ -7,7 +7,11 @@ namespace WebSite.Persistence
 {
     public class MySQL
     {
-        protected string connectionString = "Server=localhost;Database=carefour;Uid=root;Pwd=admin;";
+        //Charles
+        //protected string connectionString = "Server=localhost;Database=carefour;Uid=root;Pwd=admin;";
+
+        // Thales
+        protected string connectionString = "Server=localhost;Database=carefour;Uid=root;Pwd=1234;";
         
          
     }

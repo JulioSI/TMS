@@ -11,14 +11,14 @@ namespace WebSite.Persistence
     
     public class CategoriaDAO : MySQL
     {
-        public List<Categoria> ObterCategoriasCadastradas()
+        public List<Categoria> ObterCategoriasCadastradas(string idioma)
         {
             List<Categoria> lista = new List<Categoria>();
 
             MySqlConnection conn = new MySqlConnection(connectionString);
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conn;
-            cmd.CommandText = "SELECT id, nome, urlImagem FROM tb_categorias";
+            cmd.CommandText = "SELECT id, nome, urlImagem FROM tb_categorias order by nome";
 
             conn.Open();
             MySqlDataReader dr = cmd.ExecuteReader();
@@ -30,7 +30,7 @@ namespace WebSite.Persistence
                     lista.Add(new Categoria
                     {
                         id = (int)dr["id"],
-                        nome = dr["nome"].ToString(),
+                        nome = Tradutor.Traduzir(dr["nome"].ToString(), idioma),
                         urlImagem = dr["urlImagem"].ToString()
                     });
                 }

@@ -20,10 +20,39 @@ namespace WebSite.Controllers
             return _produto;
         }
 
-        public ActionResult Produtos(int produto)
+        public void LimparProdutos()
         {
+            _produto.listaProdutos.Clear();
+        }
+
+
+
+        public ActionResult Idioma(string id)
+        {
+            if (id == "PT")
+                Session["Idioma"] = "PT";
+            else
+                Session["Idioma"] = "EN";
+
+            return RedirectToAction("Produtos", "Produto");
+        }
+
+        public ActionResult Produtos(string produto)
+        {
+            if (Session["Idioma"] == null)
+                Session["Idioma"] = "PT";
+
+            ViewBag.Nome = Tradutor.Traduzir("produto_nome", (String)Session["Idioma"]);
+            ViewBag.Quantidade = Tradutor.Traduzir("produto_quantidade", (String)Session["Idioma"]);
+            ViewBag.Preco = Tradutor.Traduzir("produto_preco", (String)Session["Idioma"]);
+            ViewBag.btnComprar = Tradutor.Traduzir("btnComprar", (String)Session["Idioma"]);
+            ViewBag.Voltar = Tradutor.Traduzir("Voltar", (String)Session["Idioma"]);
+            ViewBag.Carrinho = Tradutor.Traduzir("Carrinho", (string)Session["Idioma"]);
+            ViewBag.Imagem = Tradutor.Traduzir("Imagem", (string)Session["Idioma"]);
+
             Produto model;
-            model = new Produto(produto);
+            if (String.IsNullOrEmpty(produto)) produto = "1";
+            model = new Produto(produto, (String)Session["Idioma"]);
             _produto = model;
 
             return View(_produto.listaProdutos);

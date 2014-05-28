@@ -1,31 +1,38 @@
-﻿<!DOCTYPE html>
+﻿@model IEnumerable<WebSite.Models.Categoria>
+
+@{
+    ViewBag.Title = "Categoria";
+}
+
+<!DOCTYPE html>
 
 <html>
 <head>
     <link href="~/CSS/Principal.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width" />
-    <title>Carofour - Seja bem Vindo</title>
+    <title>@ViewBag.Saudacao</title>
 </head>
 
 <body>
     <div id="container">
 
-        <div id="idiomas">Português / Espanhol</div>
+        <div id="idiomas">@Html.ActionLink("Português", "Idioma", "Principal", new { id = "PT" }, new { id = "PT" }) / @Html.ActionLink("Espanhol", "Idioma", "Principal", new { id = "ES" }, new { id = "ES" })</div>
         <div id="cabecalho">
             <div id="CarrinhoCompras"></div>
             Carofour
         </div>
 
         <div id="conteudo">
-            <div id="boasVindas">O Carefour sempre trazendo o melhor da roça para sua mesa!. Aproveite nossas ofertas.</div>
-            <div id="laticinios"> @Html.ActionLink("Laticínios","Produtos","Produto", new {produto = "3"},null)</div>
-            <div id="carnes">     @Html.ActionLink("Carnes", "Produtos","Produto", new { produto = "1" },null)</div>
-            <div id="padaria">    @Html.ActionLink("Padaria", "Produtos","Produto", new { produto = "4" },null) </div>
-            <div id="hortifrutigranjeiros">@Html.ActionLink("Hortifrutigranjeiros", "Produtos","Produto", new { produto = "2" },null)</div>
+            <div id="boasVindas">@ViewBag.index_bemVindo</div>
+            <div id="ContainerCategorias">
+                @foreach (var categoria in Model)
+                {
+                    <div id="GrdCategoria" style="background: @Html.DisplayFor(modelItem => categoria.urlImagem);height:185px;width:440px;float:left;margin:5px;font-size:50px;color:Snow;"> @Html.ActionLink(@Html.DisplayFor(modelItem => categoria.nome).ToString(), "Produtos", "Produto", new { produto = @Html.DisplayFor(modelItem => categoria.id) }, null)  </div>
+                }
+            </div>
             <div class="clear"></div>
         </div>
-     
-        <div id="rodape"><hr>Carofour - contato@carofour.com.br</div>        
+        <div id="rodape"><hr>Carofour - contato@carofour.com.br</div>
     </div>
 </body>
 </html>

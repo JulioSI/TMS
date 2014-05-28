@@ -23,12 +23,12 @@ namespace WebSite.Models
 
         public Produto() { }
 
-        public Produto(int id)
+        public Produto(string id, string idioma)
         {
             CategoriaDAO categoriaDAO = new CategoriaDAO();
-            List<Categoria> listaCategorias = categoriaDAO.ObterCategoriasCadastradas();
+            List<Categoria> listaCategorias = categoriaDAO.ObterCategoriasCadastradas(idioma);
             ProdutoDAO produto = new ProdutoDAO();
-            listaProdutos = produto.ProdutosDisponiveis(id, listaCategorias);
+            listaProdutos = produto.ProdutosDisponiveis(int.Parse(id), listaCategorias, idioma);
         }
 
         public void AjustaLista()

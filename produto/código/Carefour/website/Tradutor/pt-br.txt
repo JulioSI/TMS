@@ -1,0 +1,24 @@
+index_title;Carofour - Seja bem Vindo
+index_bemVindo;O Carefour sempre trazendo o melhor da roça para sua mesa!. Aproveite nossas ofertas.
+produto_nome;Nome
+produto_preco;Valor
+produto_quantidade;Quantidade
+btnComprar;Adicionar ao carrinho
+Voltar;Voltar para página inicial
+Carrinho;Ver Carrinho
+Ver Carrinho;Ver Carrinho
+btnContinuarComprando; Continuar Comprando
+FecharCompra; Finalizar Compra
+LimparCarrinho; Limpar Carrinho
+SemProdCarrinho;Não existe itens no carrinho de compra, volte á página anterior e adicione alguns produtos!
+ConfirmaCompra;Finalizar Compra
+FormaPg;Forma de Pagamento
+Resumo;Resumo da Compra
+Frete;Frete: Grátis
+inf;Informações Complementares
+infA;Preencha seus dados e click em "Finalizar Compra" para confirmar seu pedido
+infB;O carefour busca o melhor atendimento sempre.Caso tenha alguma dúvida em relação a sua compra entre em contato com o nosso SAC 0800 2014 040. 
+infC;O carefour agradece pela sua compra!
+EndEntrega;Endereço de Entrega
+numP;Número do Pedido
+prevEnt;Previsão de Entrega

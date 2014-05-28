@@ -20,13 +20,13 @@
     </script>
 
 
-    <title>Carofour - Fechamento da Compra</title>
+    <title>Carofour</title>
 </head>
 
 <body>
     <div id="container">
 
-        <div id="idiomas">Português / Espanhol</div>
+        <div id="idiomas">@Html.ActionLink("Português", "Idioma", "Cliente", new { id = "PT" }, new { id = "PT" }) / @Html.ActionLink("Espanhol", "Idioma", "Cliente", new { id = "ES" }, new { id = "ES" })</div>
         <div id="cabecalho">
             <div id="CarrinhoCompras"></div>
             Carofour
@@ -42,7 +42,7 @@
                     @Html.ValidationSummary(true)
 
                     <fieldset>
-                        <legend>Cliente</legend>
+                        <legend>@ViewBag.Cliente</legend>
 
                         <div class="editor-label">
                             @Html.LabelFor(model => model.nome)
@@ -102,7 +102,7 @@
                         </div>
 
                         <p>
-                            <input type="submit" value="Confirmar Compra" onclick="return verificarDadosCliente()" />
+                            <input type="submit" value="@ViewBag.ConfirmaCompra" onclick="return verificarDadosCliente()" />
                         </p>
 
                     </fieldset>
@@ -112,32 +112,29 @@
             
             <div id="CondicoesCompra2">
                 <fieldset>
-                    <legend>Forma de Pagamento</legend>
-                    <input type="radio" name="sex" value="Boleto">Boleto<br>
-                    <input type="radio" name="sex" value="Cartao">Cartão
+                    <legend>@ViewBag.FormaPg</legend>
+                    <input type="radio" name="sex" value="Boleto">@ViewBag.Boleto<br>
+                    <input type="radio" name="sex" value="Cartao">@ViewBag.Cartao
                 </fieldset>
 
             </div>
 
             <div id="subtotal3">
                 <fieldset>
-                    <legend>Resumo da Compra</legend>
+                    <legend>@ViewBag.Resumo</legend>
                     @ViewBag.ItensPedido
                     <br />
-                    <b>Frete: Grátis</b><br />
-                    <b>Valor da Compra:</b> @ViewBag.ValorTotalCompra <br />
+                    <b>@ViewBag.Frete</b><br />
+                    <b>@ViewBag.Valor :</b> @ViewBag.ValorTotalCompra <br />
                     <b>Total:</b> @ViewBag.ValorTotalCompra
                 </fieldset>
             </div>
 
             <div id="Instrucoes2">
                 <fieldset>
-                    <legend>Informações Complementares</legend>
-                    <i>Preencha seus dados e click em "Finalizar Compra" para confirmar seu pedido</i> <br /><br />
-
-                    O carefour busca o melhor atendimento sempre.<br />
-                    Caso tenha alguma dúvida em relação a sua compra entre <br />
-                    em contato com o nosso SAC 0800 2014 040. <br />
+                    <legend>@ViewBag.Inf</legend>
+                    <i>@ViewBag.InfA</i> <br /><br />
+                       @ViewBag.InfB                  
                 </fieldset>
             </div>
 
@@ -145,7 +142,7 @@
         </div>
 
         <div id="rodape">
-            @Html.ActionLink("Voltar para página inicial", "Index","Principal")
+           @Html.ActionLink((string)ViewBag.Voltar, "Index", "Principal")
             <hr>Carofour - contato@carofour.com.br
         </div>
 

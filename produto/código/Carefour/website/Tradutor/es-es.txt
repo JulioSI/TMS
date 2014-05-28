@@ -1,0 +1,35 @@
+index_title;Carofour - Bienvenido 
+index_bemVindo;El Carefour traer siempre el mejor del jardín a su mesa!. Aprovecha nuestras ofertas. 
+Carne;Carne
+Laticinio;Lácteo
+Hortifrutigranjeiros;Hortifrutigranjeiros
+Padaria;Panadería
+produto_nome;Nombre
+produto_preco;precio
+produto_quantidade;unidad
+btnComprar;Comprar
+Voltar;Volver a la página de inicio
+Carrinho;Ver el carro
+Ver Carrinho;Ver el carro
+btnContinuarComprando;Continuar comprando
+FecharCompra; Caja
+LimparCarrinho; Borrar la Cesta
+Atualizar;Actualización
+SubTotal;Total Parcial
+SemProdCarrinho;No hay artículos en la cesta de la compra, vuelva a la página anterior y añadir algunos productos!
+Cliente;Cliente
+ConfirmaCompra;Caja
+FormaPg;Método de pago
+Boleto;Palanquilla
+Cartao;Tarjeta
+Resumo;Resumen de Compra
+Frete;Libre
+inf;información complementaria
+infA;Rellena tus datos y haga clic en "Finalizar" para confirmar su pedido
+infB;El carefour buscar la mejor atención sempre.Caso tiene alguna pregunta sobre su compra, por favor contacte a nuestro Servicio al Cliente al 0800 2014 040.
+infC;El carefour Gracias por su compra!
+EndEntrega;Dirección de entrega
+Pedido;Número de pedido
+numP;Número de pedido
+prevEnt;Entrega Programada
+Imagem;Imagen

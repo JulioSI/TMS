@@ -9,14 +9,14 @@ namespace WebSite.Persistence
 {
     public class ProdutoDAO : MySQL
     {
-        public List<Item> ProdutosDisponiveis(int id, List<Categoria> listaCateogias)
+        public List<Item> ProdutosDisponiveis(int id, List<Categoria> listaCateogias, string idioma)
         {
             List<Item> listaProdutos = new List<Item>();
 
             MySqlConnection conn = new MySqlConnection(connectionString);
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conn;
-            cmd.CommandText = "SELECT id, concat(Nome, ' - ' , descricao)  as descricao, preco FROM tb_Produtos where id_categoria = " + id;
+            cmd.CommandText = "SELECT id, concat(Nome, ' - ' , descricao)  as descricao, preco , urlimagem FROM tb_Produtos where id_categoria = " + id;
 
             conn.Open();
             MySqlDataReader dr = cmd.ExecuteReader();
@@ -28,8 +28,9 @@ namespace WebSite.Persistence
                     listaProdutos.Add(new Item
                     {
                         id = (int)dr["id"],
-                        descricao = dr["descricao"].ToString(),
+                        descricao = Tradutor.Traduzir(dr["descricao"].ToString(), idioma),
                         preco = (double)dr["preco"],
+                        imagem = dr["urlimagem"].ToString(),
                         categoria = listaCateogias.Where(c => c.id == id).Single()
                     });
                 }

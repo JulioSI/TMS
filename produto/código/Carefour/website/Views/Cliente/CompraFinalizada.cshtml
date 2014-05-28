@@ -13,7 +13,7 @@
 <body>
     <div id="container">
 
-        <div id="idiomas">Português / Espanhol</div>
+        @*<div id="idiomas">@Html.ActionLink("Português", "Idioma", "Cliente", new { id = "PT" }, new { id = "PT" }) / @Html.ActionLink("English", "Idioma", "Cliente", new { id = "EN" }, new { id = "EN" })</div>*@
         <div id="cabecalho">
             <div id="CarrinhoCompras"></div>
             Carofour
@@ -23,42 +23,41 @@
 
             <div id="formularioCliente">
                 <fieldset>
-                    <legend>Endereço de Entrega</legend>
+                    <legend>@ViewBag.EndEntrega</legend>
                     <br />
 
                     @ViewBag.DadosCompra
-                    
+
                     <br />
                     <br />
                     <br />
-                    <b><i>O Carefour agradece sua compra! Volte Sempre!!!</i></b>
-                                     
+
+
                 </fieldset>
             </div>
 
             <div id="CondicoesCompra">
                 <fieldset>
-                    <legend>Pedido</legend>
-                    <b>Número do Pedido: @ViewBag.NumeroPedido<br /></b>
-                    Previsão de Entrega: @ViewBag.DataEntrega<br />
+                    <legend>@ViewBag.Pedido</legend>
+                    <b>@ViewBag.NumP : @ViewBag.NumeroPedido<br /></b>
+                    @ViewBag.PrevEnt : @ViewBag.DataEntrega<br />
                 </fieldset>
 
             </div>
 
             <div id="subtotal2">
                 <fieldset>
-                    <legend>Resumo do Pedido</legend>
+                    <legend>@ViewBag.Resumo</legend>
                     @ViewBag.ResumoPedido
-                    <b>SubTotal:</b> @ViewBag.ValorTotalCompra
+                    <b>@ViewBag.Valor :</b> @ViewBag.ValorTotalCompra
                 </fieldset>
             </div>
 
             <div id="Instrucoes">
                 <fieldset>
-                    <legend>Informações Complementares</legend>
-                    O carefour busca o melhor atendimento sempre.<br />
-                    Caso tenha alguma dúvida em relação a sua compra entre <br />
-                    em contato com o nosso SAC 0800 2014 040. <br />
+                    <legend>@ViewBag.Inf</legend>
+                    @ViewBag.InfC
+                    @ViewBag.InfB
                 </fieldset>
             </div>
 
@@ -66,7 +65,7 @@
         </div>
 
         <div id="rodape">
-            @Html.ActionLink("Voltar para página inicial", "Index","Principal")
+            @Html.ActionLink((string)ViewBag.Voltar, "Index", "Principal")
             <hr>Carofour - contato@carofour.com.br
         </div>
 

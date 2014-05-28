@@ -8,13 +8,13 @@
 <head>
     <link href="~/CSS/Principal.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width" />
-    <title>Carofour - Produtos por Categoria</title>
+    <title>Carofour</title>
 </head>
 
 <body>
     <div id="container">
 
-        <div id="idiomas">Português / Espanhol</div>
+        <div id="idiomas">@Html.ActionLink("Português", "Idioma", "Produto", new { id = "PT" }, new { id = "PT" }) / @Html.ActionLink("Espanhol", "Idioma", "Produto", new { id = "ES" }, new { id = "ES" })</div>
         <div id="cabecalho">
             <div id="CarrinhoCompras"></div>
             Carofour
@@ -22,15 +22,15 @@
 
 
         <div id="botoes">
-            <div id="btnCarrinho"><input type="button" name=btnCarrinho value="Ver Carrinho" onclick="location.href='@Url.Action("Carrinho", "Carrinho")    '"> </div>
+            <div id="btnCarrinho"><input type="button" name=btnCarrinho value="@ViewBag.Carrinho" onclick="location.href='@Url.Action("Carrinho", "Carrinho")    '"> </div>
         </div>
 
 
         <div id="conteudo">
             <div id="boasVindas2">
-                <div id="laticinios2"><a href="@Url.Action("Produtos", "Produto", new { produto = "3" })"> <img alt="laticinio" src="../Resources/laticinios2.jpg" /> </a></div>
-                <div id="carnes2"> <a href="@Url.Action("Produtos", "Produto", new { produto = "1" })"> <img alt="Carnes" src="../Resources/carne2.jpg" /> </a></div>
-                <div id="padaria2"> <a href="@Url.Action("Produtos", "Produto", new { produto = "4" })"> <img alt="Padaria" src="../Resources/padaria2.jpg" /> </a></div>
+                <div id="laticinios2"><a href="@Url.Action("Produtos", "Produto", new { produto = "3" })"> <img alt="laticinio" src="../Resources/laticinios2.jpg" /></a></div>
+                <div id="carnes2"> <a href="@Url.Action("Produtos", "Produto", new { produto = "1" })"> <img alt="Carnes" src="../Resources/carne2.jpg" /></a></div>
+                <div id="padaria2"> <a href="@Url.Action("Produtos", "Produto", new { produto = "4" })"> <img alt="Padaria" src="../Resources/padaria2.jpg" /></a></div>
                 <div id="hortifrutigranjeiros2"> <a href="@Url.Action("Produtos", "Produto", new { produto = "2" })"> <img alt="Hortifrutigranjeiros" src="../Resources/hortifrutigranjeiro2.png" /></a></div>
             </div>
 
@@ -40,20 +40,22 @@
                     <table>
                         <tr>
                             <th>&nbsp</th>
-                            <th>&nbsp Nome/Descrição</th>
-                            <th>&nbsp Preço &nbsp</th>
-                            <th>&nbsp Quantidade</th>
+                            <th>&nbsp @ViewBag.Nome</th>
+                            <th>@ViewBag.Imagem</th>
+                            <th>&nbsp @ViewBag.Preco &nbsp</th>
+                            <th>&nbsp @ViewBag.Quantidade</th>
                             <th>&nbsp</th>
                         </tr>
 
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td><input type="checkbox" name="produtoId" value="@Html.DisplayFor(modelItem => item.id)"  /></td>
+                                <td><input type="checkbox" name="produtoId" value="@Html.DisplayFor(modelItem => item.id)"  /></td>                                
                                 <td>@Html.DisplayFor(modelItem => item.descricao)</td>
+                                <td style="background: @Html.DisplayFor(modelItem => item.imagem);background-repeat:no-repeat;">&nbsp</td>
                                 <td>R$ @Html.DisplayFor(modelItem => item.preco)</td>  
                                 <td>@Html.TextBox("quantidade", item.quantidade)</td>  
-                                <td><input type="submit" value="Comprar Selecionados" /></td>
+                                <td><input type="submit" value="@ViewBag.btnComprar" /></td>
                             </tr>
                         }
                        
@@ -66,7 +68,7 @@
         </div>
 
         <div id="rodape">
-            @Html.ActionLink("Voltar para página inicial", "Index","Principal")
+            @Html.ActionLink((string)ViewBag.Voltar, "Index", "Principal")
             <hr>Carofour - contato@carofour.com.br
         </div>
 

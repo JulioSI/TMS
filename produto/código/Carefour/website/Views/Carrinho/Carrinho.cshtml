@@ -10,34 +10,33 @@
     <meta name="viewport" content="width=device-width" />
     <script src="~/Scripts/JavaScript1.js"></script>
     <script src="~/Scripts/jquery-1.11.1.min.js"></script>
-    <title>Carofour - Carrinho de Compras</title>
+    <title>Carofour</title>
 </head>
 
 <body>
     <div id="container">
 
-        <div id="idiomas">Português / Espanhol</div>
+        <div id="idiomas">@Html.ActionLink("Português", "Idioma", "Carrinho", new { id = "PT" }, new { id = "PT" }) / @Html.ActionLink("Espanhol", "Idioma", "Carrinho", new { id = "ES" }, new { id = "ES" })</div>
         <div id="cabecalho">
             <div id="CarrinhoCompras"></div>
             Carofour
         </div>
 
         <div id="botoes">
-            <div id="btnComprarProduto"><input type="button" name=btnComprarProduto value="Comprar Produto(s)" onclick="location.href='@Url.Action("Produtos", "Produto", new { produto = "1" })'"></div>
-            <div id="btnFecharCompra"><input type="button" name=btnFechaCompra value="Fechar Compra" onclick="location.href='@Url.Action("ConfirmaCompra","Cliente")'"></div>
+            <div id="btnComprarProduto"><input type="button" name=btnComprarProduto value="@ViewBag.btnContinuarComprando" onclick="location.href='@Url.Action("Produtos", "Produto", new { produto = "1" })'"></div>
+            <div id="btnFecharCompra"><input type="button" name=btnFechaCompra value="@ViewBag.FecharCompra" onclick="location.href='@Url.Action("ConfirmaCompra","Cliente")'"></div>
+            <div id="btnCarrinho"><input type="button" name=btnCarrinho value="@ViewBag.LimparCarrinho" onclick="location.href='@Url.Action("LimparCarrinho", "Carrinho")    '"> </div>
         </div>
 
         <div id="conteudo">
 
             <table>
                 <tr>
-                    <th width="800px">&nbsp Nome/Descrição</th>
-                    <th width="150px">&nbsp Preço &nbsp</th>
-                    <th>&nbsp Quantidade</th>
+                    <th width="800px">&nbsp @ViewBag.Nome</th>
+                    <th width="150px">&nbsp @ViewBag.Preco &nbsp</th>
+                    <th>&nbsp @ViewBag.Quantidade</th>
                     <th>&nbsp</th>
                 </tr>
-
-
 
                 @foreach (var item in Model)
                 {
@@ -46,10 +45,10 @@
                         {
                             <td> <input type="hidden"  name="produtoId" value="@Html.DisplayFor(modelItem => item.id)" />
                                 @Html.DisplayFor(modelItem => item.descricao)</td>
-                            <td>@Html.DisplayFor(modelItem => item.preco)</td>
+                            <td>R$ @Html.DisplayFor(modelItem => item.preco)</td>
                             <td>@Html.TextBox("quantidade", item.quantidade)</td>
                             <td>@Html.ActionLink("Remover", "RemoverItemCarrinho","Carrinho", new { id = @Html.DisplayFor(modelItem => item.id) },null) </td>
-                            <td><input type="submit" value="Atualizar" /></td>
+                            <td><input type="submit" value="@ViewBag.Atualizar" /></td>
                         }
                             
                     </tr>
@@ -60,7 +59,7 @@
             </table>
 
             <div id="subtotal">
-                <b>Subtotal:</b> @ViewBag.SubTotal
+                <b>@ViewBag.SubTotalV :</b> @ViewBag.SubTotal
             </div>
 
 
@@ -69,7 +68,7 @@
 
 
         <div id="rodape">
-            @Html.ActionLink("Voltar para página inicial", "Index","Principal")
+            @Html.ActionLink((string)ViewBag.Voltar, "Index", "Principal")
             <hr>Carofour - contato@carofour.com.br
         </div>
 
